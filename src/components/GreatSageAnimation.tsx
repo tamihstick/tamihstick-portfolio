@@ -70,6 +70,10 @@ const GreatSageAnimation: React.FC = () => {
       .to(".shutter-top", { height: "50vh", duration: 0.6, ease: "power3.inOut" }, "+=1.5")
       .to(".shutter-bottom", { height: "50vh", duration: 0.6, ease: "power3.inOut" }, "<")
 
+      // 5.5 Invert colors while the screen is cut off!
+      .set(containerRef.current, { backgroundColor: "#ffffff" })
+      .set(".tamihstick-logo", { color: "#000000" })
+
       // 6. Open the shutters and move the tamihstick name to the left corner as a navbar logo
       .to(".logo-reveal", {
         left: "15%",
@@ -88,7 +92,7 @@ const GreatSageAnimation: React.FC = () => {
       
       {/* Full Screen Black and White Rectangular Shutters */}
       <div className="shutter-top absolute top-0 left-0 w-full h-0 bg-white z-50"></div>
-      <div className="shutter-bottom absolute bottom-0 left-0 w-full h-0 bg-black border-t-8 border-white z-50"></div>
+      <div className="shutter-bottom absolute bottom-0 left-0 w-full h-0 bg-white border-t-8 border-white z-50"></div>
 
       {/* The Raphael / Great Sage Core */}
       <div className="hide-container absolute inset-0 flex items-center justify-center z-20">

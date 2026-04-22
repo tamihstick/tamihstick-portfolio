@@ -2,8 +2,12 @@ import React from "react";
 
 const Logo = () => {
   return (
-    <div className="text-center text-7xl font-extrabold text-white flex">
-      tamihstick
+    <div className="tamihstick-logo text-center flex justify-center">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/en/b/bc/Zenless_Zone_Zero_transparent_logo.svg"
+        alt="Zenless Zone Zero Logo"
+        className="h-100 object-contain"
+      />
     </div>
   );
 };
