@@ -1,11 +1,17 @@
 import React, { useEffect, useRef } from "react";
-import { gsap, Expo } from "gsap";
+import { gsap } from "gsap";
 import DiamondShape from "./DiamondShape";
 import "tailwindcss/tailwind.css";
 import DiamondShape2 from "./DiamondShape2";
 import Logo from "./Logo";
 
-const GreatSageAnimation: React.FC = () => {
+type GreatSageAnimationProps = {
+  onIntroComplete?: () => void;
+};
+
+const GreatSageAnimation: React.FC<GreatSageAnimationProps> = ({
+  onIntroComplete,
+}) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const outerStarRef = useRef<HTMLDivElement>(null);
   const innerStarRef = useRef<HTMLDivElement>(null);
@@ -83,9 +89,15 @@ const GreatSageAnimation: React.FC = () => {
         ease: "power3.inOut"
       }, "+=0.2")
       .to(".shutter-top", { height: "0vh", duration: 1.2, ease: "power3.inOut" }, "<")
-      .to(".shutter-bottom", { height: "0vh", duration: 1.2, ease: "power3.inOut" }, "<");
+      .to(".shutter-bottom", { height: "0vh", duration: 1.2, ease: "power3.inOut" }, "<")
+      .call(() => {
+        onIntroComplete?.();
+      });
 
-  }, []);
+    return () => {
+      tl.kill();
+    };
+  }, [onIntroComplete]);
 
   return (
     <div className="flex justify-center items-center h-screen bg-black relative overflow-hidden" ref={containerRef}>

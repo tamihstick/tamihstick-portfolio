@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { gsap, CSSPlugin, Expo } from "gsap";
 gsap.registerPlugin(CSSPlugin);
 
@@ -7,12 +7,18 @@ function Animation() {
 
   useEffect(() => {
     const count = setInterval(() => {
-      setCounter((counter) =>
-        counter < 100
-          ? counter + 1
-          : (clearInterval(count), setCounter(100), reveal())
-      );
+      setCounter((counter) => {
+        if (counter < 100) {
+          return counter + 1;
+        }
+
+        clearInterval(count);
+        reveal();
+        return 100;
+      });
     }, 25);
+
+    return () => clearInterval(count);
   }, []);
 
   const reveal = () => {
@@ -76,4 +82,4 @@ function Animation() {
   );
 }
 
-export default Animatio;
+export default Animation;
