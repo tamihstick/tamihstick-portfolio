@@ -1,4 +1,4 @@
-// import PortfolioNavigation from "../components/PortfolioNavigation";
+import PortfolioNavigation from "../components/PortfolioNavigation";
 import PortfolioHero from "../components/PortfolioHero";
 import PortfolioProjects from "../components/PortfolioProjects";
 import PortfolioAwards from "../components/PortfolioAwards";
@@ -24,8 +24,7 @@ export default function PortfolioPage() {
       {isNavbarVisible && (
         <>
           <Navbar isVisible={isNavbarVisible} />
-          {/* <PortfolioNavigation /> */}
-          
+          <PortfolioNavigation />
           <PortfolioHero />
           <PortfolioProjects />
           <PortfolioAwards />

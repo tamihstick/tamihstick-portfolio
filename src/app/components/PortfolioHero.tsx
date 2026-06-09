@@ -1,4 +1,5 @@
 import { ArrowDown } from "lucide-react";
+import ScrollTriggerAnimation from "./ScrollTriggerAnimation";
 
 export default function PortfolioHero() {
   const handleScrollDown = () => {
