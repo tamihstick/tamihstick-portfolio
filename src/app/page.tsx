@@ -1,6 +1,5 @@
-import HomePage from "./pages/Home";
+import PortfolioPage from "./pages/Portfolio";
 
 export default function Page() {
-  return <HomePage />;
-  
+  return <PortfolioPage />;
 }
