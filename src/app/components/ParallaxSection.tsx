@@ -23,13 +23,12 @@ export default function ParallaxSection({
   useEffect(() => {
     if (!containerRef.current || !bgRef.current) return;
 
-    gsap.to(bgRef.current, {
-      y: (i, target) => {
-        return -ScrollTrigger.getScrollPos() * speed;
-      },
+    const animation = gsap.to(bgRef.current, {
+      y: () => -ScrollTrigger.maxScroll(window) * speed * 0.1,
       ease: "none",
       scrollTrigger: {
         trigger: containerRef.current,
+        scrub: true,
         onUpdate: (self) => {
           gsap.to(bgRef.current, {
             y: -self.getVelocity() * speed * 0.5,
@@ -42,7 +41,8 @@ export default function ParallaxSection({
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      animation.scrollTrigger?.kill();
+      animation.kill();
     };
   }, [speed]);
 

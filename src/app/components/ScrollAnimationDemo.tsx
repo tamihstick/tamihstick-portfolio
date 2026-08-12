@@ -2,7 +2,6 @@ import ScrollTriggerAnimation from "./ScrollTriggerAnimation";
 import ParallaxSection from "./ParallaxSection";
 import TextReveal from "./TextReveal";
 import CountUpNumber from "./CountUpNumber";
-import PinSection from "./PinSection";
 
 export default function ScrollAnimationDemo() {
   return (
