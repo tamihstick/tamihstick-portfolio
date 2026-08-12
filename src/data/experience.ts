@@ -20,7 +20,7 @@ export const experience: Experience[] = [
     role: "UI Engineer",
     employmentType: "Project-based",
     startDate: "2026",
-    current: "true",
+    current: true,
     description:
       "Focused on component architecture, responsive page systems, and API-connected product experiences.",
     achievements: [
