@@ -35,13 +35,13 @@ export function ContactSection() {
             </div>
             <div>
               <p className="archive-label text-muted">GitHub</p>
-              <Link href={siteConfig.github} target="_blank" rel="noreferrer" className="mt-1 block">
+              <Link href={siteConfig.github} target="_blank" rel="noreferrer noopener" className="mt-1 block">
                 {siteConfig.github}
               </Link>
             </div>
             <div>
               <p className="archive-label text-muted">LinkedIn</p>
-              <Link href={siteConfig.linkedin} target="_blank" rel="noreferrer" className="mt-1 block">
+              <Link href={siteConfig.linkedin} target="_blank" rel="noreferrer noopener" className="mt-1 block">
                 {siteConfig.linkedin}
               </Link>
             </div>

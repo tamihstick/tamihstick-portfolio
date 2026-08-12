@@ -62,7 +62,7 @@ export function ProjectCard({ project, index, variant = "compact" }: ProjectCard
             View Case Study
           </Link>
           {project.liveUrl ? (
-            <Link href={project.liveUrl} target="_blank" rel="noreferrer" className="archive-button archive-button--secondary">
+            <Link href={project.liveUrl} target="_blank" rel="noreferrer noopener" className="archive-button archive-button--secondary">
               Live Site
               <ArrowUpRight size={14} />
             </Link>
@@ -71,7 +71,7 @@ export function ProjectCard({ project, index, variant = "compact" }: ProjectCard
             <Link
               href={project.repositoryUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer noopener"
               className="archive-button archive-button--secondary"
             >
               Source

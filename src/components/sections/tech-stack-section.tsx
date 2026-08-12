@@ -7,7 +7,7 @@ export function TechStackSection() {
     <section id="stack" className="space-y-6">
       <div className="space-y-2">
         <ArchiveLabel>04 — tech stack</ArchiveLabel>
-        <h1 className="archive-heading">Tools, frameworks, and workflows I use to build frontend products.</h1>
+        <h1 className="archive-heading">Tools, frameworks, and workflows I use as a front-end and full stack developer.</h1>
       </div>
       <div className="bryl-list">
         {skillGroups.map((group) => (

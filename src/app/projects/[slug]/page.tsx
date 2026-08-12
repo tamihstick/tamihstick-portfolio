@@ -81,13 +81,13 @@ export default async function ProjectDetailPage({
               </div>
               <div className="flex flex-wrap gap-3">
                 {project.liveUrl ? (
-                  <Link href={project.liveUrl} target="_blank" rel="noreferrer" className="archive-button">
+                  <Link href={project.liveUrl} target="_blank" rel="noreferrer noopener" className="archive-button">
                     Live Site
                     <ArrowUpRight size={14} />
                   </Link>
                 ) : null}
                 {project.repositoryUrl ? (
-                  <Link href={project.repositoryUrl} target="_blank" rel="noreferrer" className="archive-button archive-button--secondary">
+                  <Link href={project.repositoryUrl} target="_blank" rel="noreferrer noopener" className="archive-button archive-button--secondary">
                     Source
                     <ArrowUpRight size={14} />
                   </Link>

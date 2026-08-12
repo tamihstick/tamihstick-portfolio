@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
+import profileDarkImage from "@/assets/profile-dark.png";
+import profileImage from "@/assets/profile.png";
 import { profile } from "@/data/profile";
 import { ArchiveLabel } from "@/components/ui/archive-label";
 
@@ -13,11 +15,19 @@ export function HeroSection() {
           <div className="bryl-portrait-dots" />
           <div className="relative aspect-[4/5] overflow-hidden rounded-[10px] border border-[var(--outline-variant)] bg-[var(--surface-container-low)]">
             <Image
-              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80"
+              src={profileImage}
               alt="Black and white portrait treatment used as hero artwork."
               fill
               priority
-              className="object-cover grayscale contrast-125 bryl-portrait-image"
+              className="object-cover bryl-portrait-image bryl-portrait-image--default"
+              sizes="(min-width: 1024px) 18rem, 70vw"
+            />
+            <Image
+              src={profileDarkImage}
+              alt="Dark portrait treatment used as hero artwork."
+              fill
+              priority
+              className="object-cover bryl-portrait-image bryl-portrait-image--dark"
               sizes="(min-width: 1024px) 18rem, 70vw"
             />
           </div>
@@ -29,7 +39,7 @@ export function HeroSection() {
           </div>
           <div className="max-w-xl space-y-5">
             <p className="archive-body text-secondary">
-              I'm a front-end engineer. I build modern web interfaces and product experiences with a strong bias for
+              I'm a full stack developer. I build modern web interfaces and product experiences with a strong bias for
               clarity, structure, and usable detail.
             </p>
             <p className="archive-body text-secondary">
@@ -39,7 +49,7 @@ export function HeroSection() {
           </div>
           <div className="flex flex-wrap gap-x-4 gap-y-2 text-[11px] uppercase tracking-[0.12em] text-[var(--secondary)]">
             {profile.socialLinks.map((link) => (
-              <Link key={link.label} href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="inline-flex items-center gap-1 hover:text-[var(--foreground)]">
+              <Link key={link.label} href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel={link.href.startsWith("http") ? "noreferrer noopener" : undefined} className="inline-flex items-center gap-1 hover:text-[var(--foreground)]">
                 {link.label}
                 <ArrowUpRight size={12} strokeWidth={1.5} />
               </Link>

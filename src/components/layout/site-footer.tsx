@@ -11,10 +11,10 @@ export function SiteFooter() {
           <p className="text-sm text-secondary">{`© ${new Date().getFullYear()} ${siteConfig.owner}`}</p>
         </div>
         <div className="flex flex-wrap gap-4 text-sm">
-          <Link href={siteConfig.github} target="_blank" rel="noreferrer">
+          <Link href={siteConfig.github} target="_blank" rel="noreferrer noopener">
             GitHub
           </Link>
-          <Link href={siteConfig.linkedin} target="_blank" rel="noreferrer">
+          <Link href={siteConfig.linkedin} target="_blank" rel="noreferrer noopener">
             LinkedIn
           </Link>
           <Link href={`mailto:${siteConfig.email}`}>{siteConfig.email}</Link>
