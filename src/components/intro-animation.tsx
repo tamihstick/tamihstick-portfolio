@@ -110,8 +110,8 @@ export function IntroAnimation({ onComplete }: { onComplete?: () => void }) {
         </div>
 
         <div className="great-sage-logo" data-visible={showLogo ? "true" : "false"} data-docked={shuttersOpening ? "true" : "false"}>
-          <span className="great-sage-logo__title">archive_01</span>
-          <span className="great-sage-logo__subtitle font">TAMIHSTICK</span>
+          <span className="great-sage-logo__title archive-wordmark">archive_0</span>
+          <span className="great-sage-logo__subtitle font-archive-heading">TAMIHSTICK</span>
         </div>
       </div>
     </div>

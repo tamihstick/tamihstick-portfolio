@@ -1687,11 +1687,11 @@ html.theme-transition::view-transition-new(root) {
 }
 
 .great-sage-logo__title {
-  font-family: var(--font-body);
+  font-family: var(--font-archive-heading);
   font-size: clamp(2.8rem, 8vw, 6.5rem);
   line-height: 1;
   letter-spacing: -0.03em;
-  font-weight: 600;
+  font-weight: 100;
   text-transform: lowercase;
 }
 
