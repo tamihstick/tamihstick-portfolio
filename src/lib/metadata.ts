@@ -13,7 +13,7 @@ export const siteConfig = {
   siteUrl,
   description,
   github: "https://github.com/tamihstick",
-  linkedin: "https://www.linkedin.com/in/erjhon-baldoza",
+  linkedin: "https://ph.linkedin.com/in/erjhon-baldoza-792236319",
   resume: "/resume",
 };
 

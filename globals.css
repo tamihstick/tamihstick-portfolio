@@ -1200,6 +1200,7 @@ ol {
 }
 
 .bryl-profile-tabs {
+  font-style: archive;
   grid-column: 1 / -1;
   width: min(100%, 760px);
   align-items: center;
@@ -1254,11 +1255,10 @@ ol {
 }
 
 .bryl-profile-tabs__label {
-  padding-bottom: 14px;
-  color: var(--muted-foreground);
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 0.80rem;
   line-height: 1.1;
+  font-weight: 400;
 }
 
 .bryl-profile-tabs__tab.is-active {

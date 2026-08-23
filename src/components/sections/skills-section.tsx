@@ -7,7 +7,7 @@ export function SkillsSection() {
   return (
     <section id="skills" className="space-y-6">
       <div className="space-y-2">
-        <ArchiveLabel>SYSTEM // CORE_COMPETENCIES</ArchiveLabel>
+        <ArchiveLabel>03 — STACK — SKILLS</ArchiveLabel>
         <h2 className="archive-heading">Grouped capabilities shaped by product work instead of generic skill bars.</h2>
       </div>
       <div className="grid gap-4 md:grid-cols-2">

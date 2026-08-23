@@ -24,7 +24,11 @@ export const profile = {
   ],
   socialLinks: [
     { label: "github", href: "https://github.com/tamihstick" },
-    { label: "email", href: "mailto:erjhonbaldoza.dev@gmail.com" },
+    { label: "email", href: "mailto:erjhonbaldoza.@gmail.com" },
+    {
+      label: "call me",
+      href: "https://tap-save-prod.web.app/card/preview/eda03f01-74ad-4516-a490-9897d07d0d11",
+    },
   ],
   stats: [
     { value: "5+", label: "Projects Shipped" },
@@ -41,5 +45,5 @@ export const profile = {
   page: [
     { value: "2k", label: "recent views" },
     { value: "1k", label: "recent comments" },
-  ]
+  ],
 };

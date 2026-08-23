@@ -109,7 +109,7 @@ export function HeroSection() {
                   <Mail size={22} strokeWidth={2.1} />
                 </Link>
                 <Link
-                  href={profile.socialLinks[0].href}
+                  href={profile.socialLinks[2].href}
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label="More profile links"

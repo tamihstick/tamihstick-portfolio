@@ -11,7 +11,7 @@ export const projects: Project[] = [
       "FOE PH Portal consolidates member account data, service requests, and billing visibility into a single dashboard experience designed for everyday use on desktop and mobile.",
     role: "Full Stack Developer",
     year: "2026",
-    status: "ongoing",
+    status: "active",
     featured: true,
     technologies: [
       "Next.js",
@@ -47,7 +47,7 @@ export const projects: Project[] = [
       "WiseKita presents salary reference information in a way that is easier to browse, compare, and understand for job seekers and professionals evaluating compensation.",
     role: "Full Stack Developer",
     year: "2026",
-    status: "started",
+    status: "pending",
     featured: true,
     technologies: [
       "React",
@@ -147,7 +147,7 @@ export const projects: Project[] = [
       "This project management system is designed for managing dilg projects and tracking project progress and as a ojt project.",
     role: "Full Stack Developer",
     year: "2022",
-    status: "stopped",
+    status: "archived",
     featured: false,
     technologies: ["PHP", "CodeIgniter 4", "CSS", "HTML", "JavaScript"],
     image:
@@ -171,7 +171,7 @@ export const projects: Project[] = [
       "This system is designed for managing medical appointments and record and serve as a capstone project.",
     role: "Full Stack Developer",
     year: "2026",
-    status: "stopped",
+    status: "archived",
     featured: false,
     technologies: [
       "Native PHP",

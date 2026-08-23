@@ -16,7 +16,7 @@ export function AboutSection() {
   return (
     <section id="about" className="space-y-6">
       <div className="space-y-2">
-        <ArchiveLabel>DOCUMENT // CURATOR_INFO</ArchiveLabel>
+        <ArchiveLabel>04 — ABOUT_INFO</ArchiveLabel>
         <h2 className="archive-heading">A structured profile focused on approach, working style, and present direction.</h2>
       </div>
       <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
