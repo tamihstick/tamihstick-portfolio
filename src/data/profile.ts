@@ -28,8 +28,18 @@ export const profile = {
   ],
   stats: [
     { value: "5+", label: "Projects Shipped" },
-    { value: "4 yrs", label: "Full Stack / Frontend Focus" },
+    { value: "4 yrs", label: "Full Stack" },
     { value: "3x", label: "Product Domains" },
     { value: "UTC+8", label: "Timezone" },
   ],
+  links: [
+    { href: "/projects", label: "Projects" },
+    { href: "/experience", label: "Experience" },
+    { href: "/about", label: "Stack" },
+    { href: "/contact", label: "Contact" },
+  ],
+  page: [
+    { value: "2k", label: "recent views" },
+    { value: "1k", label: "recent comments" },
+  ]
 };
