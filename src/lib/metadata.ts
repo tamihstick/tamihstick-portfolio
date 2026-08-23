@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 
 const siteUrl = "https://tamihstick.dev";
-const title = "Erjhon Baldoza — Front-End Developer";
+const title = "tamihstick";
 const description =
   "Front-end developer portfolio featuring React, Next.js, TypeScript, responsive interfaces, and selected web application projects.";
 
 export const siteConfig = {
-  name: "ARCHIVE_01",
+  name: "ARCHIVE_0",
   owner: "Erjhon Baldoza",
   handle: "tamihstick",
   email: "erjhonbaldoza.dev@gmail.com",
   siteUrl,
   description,
   github: "https://github.com/tamihstick",
-  linkedin: "https://www.linkedin.com/in/erjhon-baldoza",
+  linkedin: "https://ph.linkedin.com/in/erjhon-baldoza-792236319",
   resume: "/resume",
 };
 

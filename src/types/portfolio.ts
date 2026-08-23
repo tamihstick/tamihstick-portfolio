@@ -1,4 +1,4 @@
-export type ProjectStatus = "active" | "completed" | "archived";
+export type ProjectStatus = "active" | "completed" | "archived" | "ongoing" | "pending" | "failed";
 
 export type Project = {
   slug: string;

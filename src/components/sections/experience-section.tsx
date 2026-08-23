@@ -7,7 +7,7 @@ export function ExperienceSection() {
   return (
     <section id="experience" className="space-y-6">
       <div className="space-y-2">
-        <ArchiveLabel>03 — professional history</ArchiveLabel>
+        <ArchiveLabel>02 — professional history</ArchiveLabel>
         <h2 className="archive-heading">Recent front-end and full stack work, collaboration patterns, and delivery focus.</h2>
       </div>
       <div className="bryl-list">

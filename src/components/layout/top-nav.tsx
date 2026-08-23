@@ -21,7 +21,7 @@ export function TopNav() {
       <div className="archive-top-nav__inner">
         <div className="flex items-center gap-4">
           <Link href="/" className="archive-wordmark">
-            archive_01
+            archive_0
           </Link>
           <span className="hidden archive-label text-muted md:inline">tamihstick</span>
         </div>

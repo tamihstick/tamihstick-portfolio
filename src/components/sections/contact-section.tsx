@@ -21,7 +21,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="space-y-6">
       <div className="space-y-2">
-        <ArchiveLabel>TRANSMISSION // CHANNELS</ArchiveLabel>
+        <ArchiveLabel>05 — CONTACT_INFO</ArchiveLabel>
         <h2 className="archive-heading">Open lines for project inquiries, collaboration, and frontend opportunities.</h2>
       </div>
       <div className="grid gap-4 lg:grid-cols-[0.8fr_1.2fr]">

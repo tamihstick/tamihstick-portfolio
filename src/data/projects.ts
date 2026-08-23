@@ -46,7 +46,7 @@ export const projects: Project[] = [
       "WiseKita presents salary reference information in a way that is easier to browse, compare, and understand for job seekers and professionals evaluating compensation.",
     role: "Full Stack Developer",
     year: "2026",
-    status: "active",
+    status: "pending",
     featured: true,
     technologies: [
       "React",

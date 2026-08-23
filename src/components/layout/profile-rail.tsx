@@ -28,15 +28,15 @@ export function ProfileRail() {
     <aside className="archive-left-rail archive-scrollbar">
       <div className="archive-rail-shell flex flex-col">
         <section className="archive-rail-section">
-          <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-[8px] border border-[var(--outline-variant)] bg-[var(--surface-container-low)] font-display text-xl font-bold">
+          {/* <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-[8px] border border-[var(--outline-variant)] bg-[var(--surface-container-low)] font-display text-xl font-bold">
             EB
-          </div>
+          </div> */}
           <div className="space-y-1">
             <p className="archive-label text-muted">Developer Record</p>
             <h2 className="archive-heading-sm">{profile.name}</h2>
-            <p className="archive-body-sm text-secondary">@{profile.handle}</p>
+            {/* <p className="archive-body-sm text-secondary">@{profile.handle}</p>
             <p className="archive-body-sm">{profile.shortRole}</p>
-            <p className="archive-body-sm text-secondary">{profile.location}</p>
+            <p className="archive-body-sm text-secondary">{profile.location}</p> */}
           </div>
         </section>
         <nav aria-label="Section links" className="archive-rail-section archive-rail-section--nav">
