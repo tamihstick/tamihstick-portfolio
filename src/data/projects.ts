@@ -1,5 +1,5 @@
 import type { Project } from "@/types/portfolio";
-import { Diplomata_SC } from "next/font/google";
+import foePhPortalImage from "@/assets/eagles-nexus.png";
 
 export const projects: Project[] = [
   {
@@ -20,12 +20,11 @@ export const projects: Project[] = [
       "REST API",
       "Supabase",
     ],
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Dashboard interface with charts, cards, and account details.",
+    image: foePhPortalImage.src,
+    imageAlt: "Eagles Nexus FOE Philippines portal displayed on desktop, tablet, and mobile.",
     category: "Portal / Dashboard",
     teamSize: "3",
-    liveUrl: "https://foe-ph-portal.vercel.app/",
+    liveUrl: "https://eagles-nexus.com/",
     responsibilities: [
       "Built responsive dashboard layouts for account and service flows.",
       "Connected frontend modules to API-driven data and authenticated routes.",

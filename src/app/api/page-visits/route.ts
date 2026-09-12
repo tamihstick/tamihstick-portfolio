@@ -1,26 +1,45 @@
 import { NextResponse } from "next/server";
 
-let visitCount = 0;
-let commentCount = 0;
+export const dynamic = "force-dynamic";
 
-function formatCount(value: number) {
-  if (value >= 1_000_000) {
-    return `${Math.round(value / 100_000) / 10}M`;
+async function pageVisits(method: "GET" | "POST") {
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_ANON_KEY;
+
+  if (!url || !key) {
+    return NextResponse.json({ error: "Page visits unavailable" }, { status: 503 });
   }
 
-  if (value >= 1_000) {
-    return `${Math.round(value / 100) / 10}k`;
-  }
+  try {
+    const response = await fetch(`${url}/functions/v1/portfolio-page-visits`, {
+      method,
+      headers: { apikey: key, Authorization: `Bearer ${key}` },
+      cache: "no-store",
+      signal: AbortSignal.timeout(10_000),
+    });
 
-  return `${value}`;
+    if (!response.ok) throw new Error("Page visits unavailable");
+    const data = (await response.json()) as { pageVisits?: unknown };
+    if (typeof data.pageVisits !== "string" || !/^\d+$/.test(data.pageVisits)) {
+      throw new Error("Invalid page visits response");
+    }
+
+    return NextResponse.json({ pageVisits: data.pageVisits }, {
+      headers: { "Cache-Control": "no-store" },
+    });
+  } catch {
+    return NextResponse.json({ error: "Page visits unavailable" }, {
+      status: 503,
+      headers: { "Cache-Control": "no-store" },
+    });
+  }
 }
 
+// Reading the counter must never record a visit.
 export async function GET() {
-  visitCount += 1;
-  commentCount = Math.max(commentCount + 1, Math.round(visitCount * 0.42));
+  return pageVisits("GET");
+}
 
-  return NextResponse.json({
-    recentViews: formatCount(visitCount),
-    comments: formatCount(commentCount),
-  });
+export async function POST() {
+  return pageVisits("POST");
 }

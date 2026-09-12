@@ -10,35 +10,47 @@ import profileImage from "@/assets/profile.png";
 import { profile } from "@/data/profile";
 import { ArchiveLabel } from "../ui/archive-label";
 
+// Only initialized in the browser effect. Survives route remounts until a full reload.
+let visitRequest: Promise<string> | null = null;
+
 export function HeroSection() {
-  const [pageStats, setPageStats] = useState(profile.page);
+  const [pageVisits, setPageVisits] = useState<string | null>(null);
 
   useEffect(() => {
     let isActive = true;
 
-    async function loadPageStats() {
-      try {
-        const response = await fetch("/api/page-visits", { cache: "no-store" });
-        if (!response.ok) {
-          return;
-        }
-
-        const data = (await response.json()) as { recentViews?: string; comments?: string };
-
-        if (!isActive) {
-          return;
-        }
-
-        setPageStats([
-          { value: data.recentViews ?? profile.page[0]?.value ?? "0", label: "recent views" },
-          { value: data.comments ?? profile.page[1]?.value ?? "0", label: "comments" },
-        ]);
-      } catch {
-        // Keep the fallback values if the live counter is unavailable.
-      }
+    // This is only a display cache; the database owns the shared total.
+    try {
+      const cached = window.localStorage.getItem("portfolio:page-visits:v1");
+      if (cached && /^\d+$/.test(cached)) setPageVisits(cached);
+    } catch {
+      // Storage may be disabled; the shared counter still works.
     }
 
-    loadPageStats();
+    // Reuse the request across navigation and React's development effect replay.
+    visitRequest ??= fetch("/api/page-visits", {
+      method: "POST",
+      cache: "no-store",
+    }).then(async (response) => {
+      if (!response.ok) throw new Error("Page visits unavailable");
+      const data = (await response.json()) as { pageVisits?: unknown };
+      if (typeof data.pageVisits !== "string" || !/^\d+$/.test(data.pageVisits)) {
+        throw new Error("Invalid page visits response");
+      }
+      return data.pageVisits;
+    });
+
+    visitRequest.then((count) => {
+      if (!isActive) return;
+      setPageVisits(count);
+      try {
+        window.localStorage.setItem("portfolio:page-visits:v1", count);
+      } catch {
+        // Caching is optional; a refresh still reads the database.
+      }
+    }).catch(() => {
+      // Keep the last known total instead of replacing it with zero.
+    });
 
     return () => {
       isActive = false;
@@ -98,7 +110,7 @@ export function HeroSection() {
 
             <div className="bryl-profile-card__meta">
               <p>
-                <strong>{pageStats[0]?.value}</strong> recent views <span>/</span>{" "}
+                <strong>{pageVisits === null ? "—" : BigInt(pageVisits).toLocaleString("en-US")}</strong> page visits <span>/</span>{" "}
                 <strong>0</strong> comments
               </p>
               <div className="bryl-profile-card__icons" aria-label="Profile actions">

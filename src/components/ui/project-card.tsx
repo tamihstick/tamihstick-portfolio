@@ -7,7 +7,6 @@ import { ArchiveLabel } from "@/components/ui/archive-label";
 import { ArchivePanel } from "@/components/ui/archive-panel";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { TechTag } from "@/components/ui/tech-tag";
-import { cn } from "@/lib/utils";
 
 type ProjectCardProps = {
   project: Project;
@@ -15,13 +14,12 @@ type ProjectCardProps = {
   variant?: "featured" | "compact";
 };
 
-export function ProjectCard({ project, index, variant = "compact" }: ProjectCardProps) {
-  const isFeatured = variant === "featured";
+export function ProjectCard({ project, index }: ProjectCardProps) {
 
   return (
     <ArchivePanel
       interactive
-      className={cn("project-card p-0", isFeatured && "md:grid md:grid-cols-[1.2fr_0.9fr]")}
+      className="project-card p-0"
     >
       <div className="project-card__media">
         <Image
@@ -29,7 +27,7 @@ export function ProjectCard({ project, index, variant = "compact" }: ProjectCard
           alt={project.imageAlt}
           fill
           className="object-cover"
-          sizes={isFeatured ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 1024px) 33vw, 100vw"}
+          sizes="100vw"
         />
       </div>
       <div className="project-card__content flex flex-col gap-4">

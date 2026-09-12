@@ -66,7 +66,14 @@ export default async function ProjectDetailPage({
 
         <div className="overflow-hidden border border-[var(--outline-variant)] bg-[var(--surface-container)]">
           <div className="relative aspect-[16/9]">
-            <Image src={project.image} alt={project.imageAlt} fill sizes="100vw" className="object-cover grayscale" priority />
+            <Image
+              src={project.image}
+              alt={project.imageAlt}
+              fill
+              sizes="100vw"
+              className="object-cover grayscale"
+              priority
+            />
           </div>
         </div>
 

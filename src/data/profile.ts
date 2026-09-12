@@ -43,7 +43,7 @@ export const profile = {
     { href: "/contact", label: "Contact" },
   ],
   page: [
-    { value: "2k", label: "recent views" },
+    { value: "—", label: "page visits" },
     { value: "1k", label: "recent comments" },
   ],
 };
